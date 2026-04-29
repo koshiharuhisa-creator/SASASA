@@ -1,12 +1,13 @@
 SASASA/
   └ index.html
+
 import React from "react";
 
 const players = [
   {
     name: "fightgum",
     role: "Main Roster",
-    img: "/players/fightgum.png",
+    
     link: "https://fortnitetracker.com/profile/all/fightgum3",
     twitter: "https://x.com/shinjiS46778447",
     bio: ["$200 Earned", "Div1"]
@@ -14,7 +15,6 @@ const players = [
   {
     name: "makaron",
     role: "Main Roster",
-    img: "/players/makaron.png",
     link: "https://fortnitetracker.com/profile/kbm/%E3%81%B6%E3%82%8A%E3%82%80jr/events?region=ASIA&sortBy=pr",
     twitter: "https://x.com/macaron42313",
     bio: ["PR2000", "OCE Div1", "Asia Div2 #59"]
@@ -22,7 +22,6 @@ const players = [
   {
     name: "airy",
     role: "Main Roster",
-    img: "/players/airy.png",
     link: "https://fortnitetracker.com/profile/kbm/5tars%20%E3%83%9E%E3%83%BC%E3%83%95%E3%82%A3%E3%82%92%E9%A3%9F%E3%81%84%E3%81%9F%E3%81%84/events?region=ASIA&sortBy=pr",
     twitter: "https://x.com/airyfnzzz",
     bio: ["PR2000", "AJS×2"]
@@ -30,7 +29,6 @@ const players = [
   {
     name: "maruri",
     role: "Main Roster",
-    img: "/players/maruri.png",
     link: "https://fortnitetracker.com/profile/all/5TARS%20maruri%C7%83%C7%83/events",
     twitter: "https://x.com/marurifv0324",
     bio: ["Div2 #5", "Div1", "PR3300"]
@@ -38,7 +36,6 @@ const players = [
   {
     name: "kurara",
     role: "Main Roster",
-    img: "/players/kurara.png",
     link: "https://fortnitetracker.com/profile/kbm/5TARS%20kurara/events?region=ASIA&sortBy=pr",
     twitter: "https://x.com/kurara625124002",
     bio: ["PS5", "PR7000", "Div3 #118"]
@@ -120,7 +117,6 @@ export default function FiveStarsSite() {
             <a key={i} href={p.link} target="_blank" rel="noopener noreferrer" className="group relative block">
               <div className="relative h-[420px] rounded-2xl overflow-hidden border border-white/10">
 
-                <img src={p.img} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500" />
 
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
 
