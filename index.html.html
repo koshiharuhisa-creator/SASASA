@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5TARS ENTRY</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Orbitron',sans-serif;background:#0a0f1a;color:white}
+.header{padding:40px 20px;text-align:center;border-bottom:1px solid #1f2a44}
+.header h1{margin:0;color:#3aa0ff;font-size:32px}
+.header p{opacity:.7;margin-top:10px}
+.section{max-width:700px;margin:40px auto;padding:20px}
+.card{background:#111827;padding:20px;border-radius:12px;border:1px solid #1f2a44;margin-top:20px}
+button{padding:12px 20px;border:none;border-radius:8px;background:#3aa0ff;color:white;cursor:pointer;width:100%;margin-top:10px}
+input,select,textarea{width:100%;margin-top:10px;padding:10px;border-radius:8px;border:1px solid #1f2a44;background:#0f172a;color:white}
+.viewer{display:none}
+.label{font-size:13px;opacity:.7;margin-top:10px}
+.success{display:none;text-align:center;padding:40px}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>5TARS ENTRY</h1>
+<p>入隊希望フォーム（競技 / 育成 / ストリーマー）</p>
+</div>
+
+<section class="section" id="mainSection">
+
+<!-- 応募条件 -->
+<div class="card">
+<h2>応募条件</h2>
+<ul>
+<li>年齢制限: 13歳以上</li>
+<li>競技・育成: フォートナイト実績必須</li>
+<li>ストリーマー: 継続的な活動実績</li>
+<li>チーム活動に積極的に参加できる方</li>
+</ul>
+</div>
+
+<div class="card">
+<h2>応募フォーム</h2>
+
+<label class="label">部門</label>
+<select id="division" onchange="toggleFields()">
+<option value="競技">競技部門</option>
+<option value="育成">育成部門</option>
+<option value="ストリーマー">ストリーマー部門</option>
+</select>
+
+<label class="label">年齢</label>
+<input id="age" placeholder="例: 18">
+
+<label class="label">Xアカウント</label>
+<input id="x" placeholder="例: https://x.com/oisiigohanXL">
+
+<label class="label">意気込み</label>
+<textarea id="motivation" placeholder="意気込み"></textarea>
+
+<div id="trackerField">
+<label class="label">フォートナイトトラッカー</label>
+<input id="tracker" placeholder="トラッカーURL">
+</div>
+
+<div id="snsField" style="display:none;">
+<label class="label">SNSリンク</label>
+<input id="sns" placeholder="YouTube / Twitchなど">
+</div>
+
+<button onclick="submitForm()">応募する</button>
+</div>
+
+<div class="card">
+<h3>応募閲覧（関係者専用）</h3>
+<input id="password" placeholder="パスワード">
+<button onclick="checkPassword()">確認</button>
+<div id="viewer" class="viewer"></div>
+</div>
+</section>
+
+<!-- 完了画面 -->
+<section class="section success" id="successSection">
+<div class="card">
+<h2>応募完了</h2>
+<p>ご応募ありがとうございます。審査後、連絡いたします。</p>
+</div>
+</section>
+
+<script>
+let applications = JSON.parse(localStorage.getItem('apps') || '[]');
+function save(){ localStorage.setItem('apps', JSON.stringify(applications)); }
+
+function toggleFields(){
+const div = division.value;
+trackerField.style.display = div==='ストリーマー'?'none':'block';
+snsField.style.display = div==='ストリーマー'?'block':'none';
+}
+
+function submitForm(){
+const data={division:division.value,age:age.value,x:x.value,motivation:motivation.value,tracker:tracker.value,sns:sns.value};
+applications.push(data);save();
+
+// ===== 通知強化（詳細送信） =====
+const webhookURL="https://discord.com/api/webhooks/1498693126548623401/noVNw8tINu8vBgdtBbQU2tvDGzn8Og3tKFRjl-G-pOsueAuPp8wX7WkmlNkWrIOlpABe";
+
+const content = `【5TARS 新規応募】\n
+部門: ${data.division}\n年齢: ${data.age}\nX: ${data.x}\n${data.tracker ? `トラッカー: ${data.tracker}` : ''}${data.sns ? `SNS: ${data.sns}` : ''}\n意気込み:\n${data.motivation}`;
+
+fetch(webhookURL,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({content})});
+
+// 完了画面へ切替
+mainSection.style.display='none';
+successSection.style.display='block';
+}
+
+function checkPassword(){
+if(password.value==='Haruhisa54'){render();viewer.style.display='block';}else alert('違う');
+}
+
+function render(){
+viewer.innerHTML='';
+applications.forEach((app)=>{
+viewer.innerHTML+=`<div class="card"><p>部門:${app.division}</p><p>年齢:${app.age}</p><p>X:${app.x}</p><p>${app.tracker||app.sns}</p><p>${app.motivation}</p></div>`;
+});
+}
+</script>
+
+<!-- React用エントリー導線（上部に追加する用） -->
+<div style="position:fixed;top:20px;right:20px;z-index:999;">
+  <a href="https://あなたのID.github.io/5tars-entry/" target="_blank" 
+     style="background:#3aa0ff;color:white;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:bold;">
+     ENTRY
+  </a>
+</div>
+
+</body>
+</html>
