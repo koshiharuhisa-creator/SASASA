@@ -1,0 +1,161 @@
+SASASA/
+  └ index.html
+import React from "react";
+
+const players = [
+  {
+    name: "fightgum",
+    role: "Main Roster",
+    img: "/players/fightgum.png",
+    link: "https://fortnitetracker.com/profile/all/fightgum3",
+    twitter: "https://x.com/shinjiS46778447",
+    bio: ["$200 Earned", "Div1"]
+  },
+  {
+    name: "makaron",
+    role: "Main Roster",
+    img: "/players/makaron.png",
+    link: "https://fortnitetracker.com/profile/kbm/%E3%81%B6%E3%82%8A%E3%82%80jr/events?region=ASIA&sortBy=pr",
+    twitter: "https://x.com/macaron42313",
+    bio: ["PR2000", "OCE Div1", "Asia Div2 #59"]
+  },
+  {
+    name: "airy",
+    role: "Main Roster",
+    img: "/players/airy.png",
+    link: "https://fortnitetracker.com/profile/kbm/5tars%20%E3%83%9E%E3%83%BC%E3%83%95%E3%82%A3%E3%82%92%E9%A3%9F%E3%81%84%E3%81%9F%E3%81%84/events?region=ASIA&sortBy=pr",
+    twitter: "https://x.com/airyfnzzz",
+    bio: ["PR2000", "AJS×2"]
+  },
+  {
+    name: "maruri",
+    role: "Main Roster",
+    img: "/players/maruri.png",
+    link: "https://fortnitetracker.com/profile/all/5TARS%20maruri%C7%83%C7%83/events",
+    twitter: "https://x.com/marurifv0324",
+    bio: ["Div2 #5", "Div1", "PR3300"]
+  },
+  {
+    name: "kurara",
+    role: "Main Roster",
+    img: "/players/kurara.png",
+    link: "https://fortnitetracker.com/profile/kbm/5TARS%20kurara/events?region=ASIA&sortBy=pr",
+    twitter: "https://x.com/kurara625124002",
+    bio: ["PS5", "PR7000", "Div3 #118"]
+  }
+];
+
+export default function FiveStarsSite() {
+  return (
+    <div className="min-h-screen bg-black text-white">
+
+      {/* HERO */}
+      <section className="h-screen flex items-center justify-center relative">
+        <img src="/images/team-banner.jpg" className="absolute w-full h-full object-cover opacity-40" />
+        <div className="absolute inset-0 bg-black/70" />
+
+        <div className="relative text-center z-10">
+          <h1 className="text-7xl font-bold">DOMINATE</h1>
+          <h1 className="text-7xl font-bold">SHINE</h1>
+          <h1 className="text-7xl font-bold text-gray-400">REPEAT</h1>
+        </div>
+
+        <div className="absolute bottom-6 right-6 flex gap-4 z-10">
+          <a href="https://x.com/sr1rt" target="_blank">X</a>
+          <a href="https://www.youtube.com/@5tarsspread" target="_blank">YouTube</a>
+        </div>
+      </section>
+
+      {/* MESSAGE FULL */}
+      <section className="py-24 px-6 max-w-5xl mx-auto border-l-2 border-blue-500 pl-6 space-y-6">
+        <h2 className="text-3xl font-bold">代表挨拶</h2>
+
+        <p className="text-white font-semibold">代表挨拶：新たな星が、eスポーツの歴史を塗り替える。</p>
+
+        <p className="text-gray-400">1. はじめに：5tars設立に込めた想い</p>
+        <p className="text-gray-400">この度、eスポーツチーム「5tars（スターズ）」の公式サイトをご覧いただき、誠にありがとうございます。代表のはりです。</p>
+        <p className="text-gray-400">私たちは、デジタルネイティブ世代の新たな文化であり、世界を熱狂させる究極の競技である「eスポーツ」の可能性を信じ、このチームを設立いたしました。チーム名である「5tars」には、個々が光り輝く一等星であり、その5つ（5-star）の輝きが重なり合った時、これまでにない巨大な熱狂と感動を創り出すという決意を込めています。</p>
+        <p className="text-gray-400">現在、私たちは「フォートナイト（Fortnite）」をメインタイトルに据え、日々研鑽を積んでいます。建築、エイム、そして瞬時の判断力が求められるこの過酷かつクリエイティブな戦場において、頂点を目指す道は決して平坦ではありません。しかし、だからこそ挑戦する価値があると私たちは確信しています。</p>
+
+        <p className="text-gray-400">2. フォートナイトという競技への情熱</p>
+        <p className="text-gray-400">広大な島を舞台に繰り広げられる生き残りをかけた戦い。コンマ数秒の間に組み上げられる建築の攻防。そして、常に変化し続けるメタへの適応力。フォートナイトは単なるゲームの枠を超えた競技です。</p>
+
+        <p className="text-gray-400">3. 私たちが掲げる3つのビジョン</p>
+        <p className="text-gray-400">世界基準の競技力の確立 / eスポーツの社会的地位の向上 / コミュニティとの共創</p>
+
+        <p className="text-gray-400">4. ファン、スポンサーの皆様へ</p>
+        <p className="text-gray-400">皆様の声援が選手の力となります。</p>
+
+        <p className="text-gray-400">5. 結びに代えて</p>
+        <p className="text-gray-400">5tarsは挑戦し続けます。</p>
+
+        <p className="text-right text-white">5tars 代表 はり</p>
+      </section>
+
+      {/* VISION FULL */}
+      <section className="py-24 px-6 max-w-5xl mx-auto border-l-2 border-blue-500 pl-6 space-y-6">
+        <h2 className="text-3xl font-bold">VISION</h2>
+
+        <p className="text-white font-semibold">5tars Vision：未来を描く、5つの光。</p>
+        <p className="text-gray-400">私たちは、ただ勝利を重ねるだけの集団ではありません。eスポーツという新たな文化の先駆者として、選手、ファン、そして社会全体を照らす存在を目指しています。</p>
+
+        <p className="text-white">Phase 1：Dominance</p>
+        <p className="text-gray-400">国内大会の制覇、そして世界大会へ。</p>
+
+        <p className="text-white">Phase 2：Influence</p>
+        <p className="text-gray-400">影響力を持つ存在へ。</p>
+
+        <p className="text-white">Phase 3：Symbiosis</p>
+        <p className="text-gray-400">社会と共に成長する未来。</p>
+
+        <p className="text-center text-white">「5人のスターが揃った時、不可能は消え、伝説が始まる。」</p>
+      </section>
+
+      {/* ROSTER */}
+      <section className="py-28 px-6">
+        <h2 className="text-5xl text-center mb-16">ROSTER</h2>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {players.map((p, i) => (
+            <a key={i} href={p.link} target="_blank" rel="noopener noreferrer" className="group relative block">
+              <div className="relative h-[420px] rounded-2xl overflow-hidden border border-white/10">
+
+                <img src={p.img} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+
+                <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 z-10">
+                  <a href={p.twitter} target="_blank" rel="noopener noreferrer" onClick={(e)=>e.stopPropagation()}>
+                    <svg className="w-5 h-5 hover:text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M22 5.8c-.7.3-1.5.5-2.3.6.8-.5 1.4-1.2 1.7-2.1-.8.5-1.7.8-2.6 1-1.5-1.6-4-1.7-5.6-.2-1 1-1.4 2.4-1.1 3.7-3.3-.2-6.4-1.7-8.4-4.3-1.1 1.9-.6 4.3 1.1 5.7-.6 0-1.2-.2-1.7-.5 0 2 1.4 3.8 3.4 4.2-.6.2-1.2.2-1.8.1.5 1.7 2.1 2.9 3.9 3-1.5 1.2-3.3 1.8-5.2 1.8H2c1.9 1.2 4.1 1.9 6.3 1.9 7.6 0 11.8-6.3 11.8-11.8v-.5c.8-.6 1.5-1.3 2-2.1z"/></svg>
+                  </a>
+                </div>
+
+                <div className="absolute bottom-0 p-6 w-full">
+                  <h3 className="text-2xl font-bold">{p.name}</h3>
+                  <p className="text-sm text-blue-400">{p.role}</p>
+
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {p.bio.map((b, idx) => (
+                      <span key={idx} className="text-xs px-2 py-1 bg-white/10 rounded">{b}</span>
+                    ))}
+                  </div>
+
+                  <p className="mt-3 text-xs text-gray-400 opacity-0 group-hover:opacity-100 transition">VIEW PROFILE →</p>
+                </div>
+
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      {/* SPONSOR */}
+      <section className="py-24 text-center">
+        <h2 className="text-4xl mb-6">SPONSOR</h2>
+        <a href="https://x.com/Superfun_Live" target="_blank" className="text-blue-400">Superfun Live</a>
+      </section>
+
+    </div>
+  );
+}
+
